@@ -2,7 +2,7 @@
 
 <view class="page-container">
   <view class="search-panel">
-    <section-header title="快速搜索" subtitle="只做信息发布、搜索、交流与匹配，不做支付、不做下单、不做履约。匹配后请通过微信或 WhatsApp 私下沟通，并自行核实信息。" />
+    <section-header title="快速搜索" subtitle="只做信息发布、搜索、交流与匹配，不做下单、不做履约。匹配后请通过微信或 WhatsApp 私下沟通，请自行核实信息。" />
     <view class="quick-tag-row">
       <view wx:for="{{quickTags}}" wx:key="*this" class="quick-tag {{activeTag === item ? 'quick-tag--active' : ''}}" data-tag="{{item}}" bindtap="toggleTag">{{item}}</view>
     </view>
