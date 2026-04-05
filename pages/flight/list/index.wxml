@@ -1,0 +1,31 @@
+﻿<t-navbar title="航班行李互助" leftArrow />
+
+<view class="page-container">
+  <view class="filter-card" style="padding:28rpx;">
+    <section-header title="筛选信息" subtitle="先用本地筛选，后续可直接替换成接口查询参数" />
+    <view class="field-group">
+      <view class="field-label">方向</view>
+      <view class="chip-row">
+        <view wx:for="{{directionOptions}}" wx:key="value" class="chip {{filters.direction === item.value ? 'chip--active' : ''}}" data-value="{{item.value}}" bindtap="setDirection">{{item.label}}</view>
+      </view>
+    </view>
+    <view class="field-group"><t-input label="出发城市" placeholder="例如：广州" value="{{filters.departure_city}}" data-field="departure_city" bind:change="onInputChange" /></view>
+    <view class="field-group"><t-input label="到达城市" placeholder="例如：龙目岛" value="{{filters.arrival_city}}" data-field="arrival_city" bind:change="onInputChange" /></view>
+    <view class="field-group" style="margin-bottom:0;"><t-input label="出发日期" placeholder="例如：2026-04-12" value="{{filters.departure_date}}" data-field="departure_date" bind:change="onInputChange" /></view>
+  </view>
+
+  <view class="section-gap"><section-header title="航班信息列表" subtitle="点击卡片查看详情与申请入口" /></view>
+
+  <view wx:if="{{filteredPosts.length}}">
+    <view wx:for="{{filteredPosts}}" wx:key="id" class="section-gap">
+      <post-card title="{{item.departure_city}} -> {{item.arrival_city}}" subtitle="{{item.departure_date}} · {{item.departure_airport}} -> {{item.arrival_airport}}" primaryText="查看详情" item="{{item}}" bind:cardtap="goDetail" bind:primarytap="goDetail">
+        <status-tag slot="header-extra" status="{{item.status}}" />
+        <view class="summary-line"><text>可用重量</text><text class="highlight">{{item.available_weight_kg}} kg</text></view>
+        <view class="summary-line"><text>体积说明</text><text class="muted">{{item.volume_note}}</text></view>
+        <view class="summary-line"><text>参考价格</text><text class="muted">{{item.reference_price}}</text></view>
+      </post-card>
+    </view>
+  </view>
+
+  <view wx:else class="empty-wrap"><t-empty description="没有符合条件的航班信息"></t-empty></view>
+</view>

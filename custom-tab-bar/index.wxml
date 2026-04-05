@@ -1,0 +1,6 @@
+﻿<view class="tabbar">
+  <view wx:for="{{tabs}}" wx:key="value" class="tabbar__item {{selected === item.value ? 'tabbar__item--active' : ''}}" data-path="{{item.value}}" bindtap="onTabTap">
+    <t-icon name="{{item.icon}}" size="44rpx" />
+    <view class="tabbar__text">{{item.text}}</view>
+  </view>
+</view>

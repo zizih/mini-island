@@ -384,3 +384,29 @@ page {
   margin: 16rpx 32rpx 0;
   line-height: 44rpx;
 }
+
+page,
+.page {
+  --td-brand-color-1: #eef9f1;
+  --td-brand-color-2: #d8f1df;
+  --td-brand-color-3: #b5e4c3;
+  --td-brand-color-4: #86d39c;
+  --td-brand-color-5: #53bb73;
+  --td-brand-color-6: #22a257;
+  --td-brand-color-7: #0f8f53;
+  --td-brand-color-8: #0b7443;
+  --td-brand-color-9: #085734;
+  --td-brand-color-10: #043c24;
+  --td-primary-color-1: var(--td-brand-color-1);
+  --td-primary-color-2: var(--td-brand-color-2);
+  --td-primary-color-3: var(--td-brand-color-3);
+  --td-primary-color-4: var(--td-brand-color-4);
+  --td-primary-color-5: var(--td-brand-color-5);
+  --td-primary-color-6: var(--td-brand-color-6);
+  --td-primary-color-7: var(--td-brand-color-7);
+  --td-primary-color-8: var(--td-brand-color-8);
+  --td-primary-color-9: var(--td-brand-color-9);
+  --td-primary-color-10: var(--td-brand-color-10);
+  --td-brand-color: var(--td-primary-color-7);
+  --td-navbar-bg-color: #f5fbf7;
+}

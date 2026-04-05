@@ -1,0 +1,33 @@
+﻿<t-navbar title="我的联系" />
+
+<view class="page-container">
+  <view class="hero-card">
+    <view class="hero-title">联系记录</view>
+    <view class="hero-desc">只记录信息匹配与联系方式交换，不涉及站内支付和订单结算。</view>
+  </view>
+
+  <section-header title="我联系的人" subtitle="我主动发起过沟通的记录" />
+  <view wx:if="{{contacted.length}}">
+    <view wx:for="{{contacted}}" wx:key="id" class="section-gap">
+      <post-card title="{{item.moduleType}}" subtitle="{{item.postTitle}}">
+        <view class="summary-line"><text>摘要</text><text class="muted">{{item.summary}}</text></view>
+        <view class="summary-line"><text>联系方式</text><text class="highlight">{{item.contactType}}：{{item.contact}}</text></view>
+        <view class="summary-line"><text>时间</text><text class="muted">{{item.date}}</text></view>
+      </post-card>
+    </view>
+  </view>
+  <view wx:else class="empty-wrap"><t-empty description="还没有主动联系记录"></t-empty></view>
+
+  <view class="section-gap"></view>
+  <section-header title="联系过我的人" subtitle="别人主动来询问我的记录" />
+  <view wx:if="{{contactedMe.length}}">
+    <view wx:for="{{contactedMe}}" wx:key="id" class="section-gap">
+      <post-card title="{{item.moduleType}}" subtitle="{{item.postTitle}}">
+        <view class="summary-line"><text>摘要</text><text class="muted">{{item.summary}}</text></view>
+        <view class="summary-line"><text>联系方式</text><text class="highlight">{{item.contactType}}：{{item.contact}}</text></view>
+        <view class="summary-line"><text>时间</text><text class="muted">{{item.date}}</text></view>
+      </post-card>
+    </view>
+  </view>
+  <view wx:else class="empty-wrap"><t-empty description="还没有收到新的联系"></t-empty></view>
+</view>

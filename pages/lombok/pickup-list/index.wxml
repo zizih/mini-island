@@ -1,0 +1,15 @@
+﻿<t-navbar title="接机需求列表" leftArrow />
+
+<view class="page-container">
+  <section-header title="接机需求" subtitle="使用 mock 数据展示乘客发布的接机/拼车需求" />
+  <view wx:for="{{list}}" wx:key="id" class="section-gap">
+    <post-card title="{{item.airport}} -> {{item.destination}}" subtitle="{{item.date}} {{item.time}}" primaryText="联系" item="{{item}}" bind:primarytap="contact">
+      <status-tag slot="header-extra" status="{{item.status}}" />
+      <view class="summary-line"><text>乘客数</text><text class="muted">{{item.passenger_count}} 人</text></view>
+      <view class="summary-line"><text>行李数</text><text class="muted">{{item.luggage_count}} 件</text></view>
+      <view class="summary-line"><text>偏好车型</text><text class="muted">{{item.preferred_car_type}}</text></view>
+      <view class="summary-line"><text>拼车</text><text class="highlight">{{item.share_ride_flag ? '可拼车' : '不拼车'}}</text></view>
+      <view class="summary-line"><text>联系信息</text><text class="muted">{{item.wechat_id ? '微信可联系' : 'WhatsApp 可联系'}}</text></view>
+    </post-card>
+  </view>
+</view>

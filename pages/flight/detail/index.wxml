@@ -1,0 +1,32 @@
+﻿<t-navbar title="行李信息详情" leftArrow />
+
+<view class="page-container" wx:if="{{post}}">
+  <view class="hero-card">
+    <view style="display:flex;align-items:flex-start;justify-content:space-between;gap:16rpx;">
+      <view>
+        <view class="hero-title" style="font-size:38rpx;">{{post.departure_city}} -> {{post.arrival_city}}</view>
+        <view class="hero-desc">{{post.departure_date}} · {{post.departure_airport}} -> {{post.arrival_airport}}</view>
+      </view>
+      <status-tag status="{{post.status}}" />
+    </view>
+  </view>
+
+  <view class="info-card" style="padding:28rpx;">
+    <section-header title="信息详情" />
+    <view class="contact-inline"><text>可用重量</text><text class="highlight">{{post.available_weight_kg}} kg</text></view>
+    <view class="contact-inline"><text>体积说明</text><text class="muted">{{post.volume_note}}</text></view>
+    <view class="contact-inline"><text>参考价格</text><text class="muted">{{post.reference_price}}</text></view>
+    <view class="contact-inline"><text>备注</text><text class="muted">{{post.remark}}</text></view>
+    <view class="contact-inline"><text>联系微信</text><text class="highlight">{{post.wechat_id}}</text></view>
+  </view>
+
+  <view class="section-gap warn-box">
+    <view class="warn-title">平台规则提醒</view>
+    <view class="warn-text">1. 仅允许正规电商平台购买的商品，且必须直接寄送给航班所有人。\n2. 严禁私人手提、私人物品夹带。\n3. 平台只做信息撮合，双方匹配后通过微信私下沟通。</view>
+  </view>
+
+  <view class="section-gap btn-row">
+    <t-button theme="primary" class="btn-item" bindtap="goApply">联系 / 申请</t-button>
+    <t-button theme="default" variant="outline" class="btn-item" bindtap="goBack">返回</t-button>
+  </view>
+</view>

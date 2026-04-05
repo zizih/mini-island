@@ -1,0 +1,11 @@
+﻿<t-navbar title="平台规则" leftArrow />
+
+<view class="page-container">
+  <view class="hero-card">
+    <view class="hero-title">平台规则</view>
+    <view class="hero-desc">请在发布和联系前先阅读以下规则，当前平台仅做信息发布和撮合。</view>
+  </view>
+  <view class="info-card" style="padding:28rpx;">
+    <view class="warn-text">1. 本平台仅用于信息发布与匹配，不提供站内交易功能。\n\n2. 平台不提供微信支付、站内结算、担保交易等功能。\n\n3. 用户匹配成功后，请自行添加微信或 WhatsApp 私下沟通。\n\n4. 航班行李模块仅允许正规电商平台购买的商品，且必须直寄给航班所有人。\n\n5. 私人物品、手提私货、违规物品一律禁止。\n\n6. 平台有权删除违法、违规、不实或不适当内容。</view>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+﻿<t-navbar title="司机服务列表" leftArrow />
+
+<view class="page-container">
+  <section-header title="司机服务" subtitle="查看司机、车型、语言和服务区域" />
+  <view wx:for="{{list}}" wx:key="id" class="section-gap">
+    <post-card title="{{item.driver_name}}" subtitle="{{item.car_model}}" primaryText="联系" item="{{item}}" bind:primarytap="contact">
+      <status-tag slot="header-extra" status="{{item.status}}" />
+      <view class="summary-line"><text>座位数</text><text class="muted">{{item.seat_count}} 座</text></view>
+      <view class="summary-line"><text>服务范围</text><text class="muted">{{item.service_area}}</text></view>
+      <view class="summary-line"><text>参考价格</text><text class="muted">{{item.reference_price}}</text></view>
+      <view class="summary-line"><text>支持语言</text><text class="muted">{{item.language_supported}}</text></view>
+      <view class="summary-line"><text>联系信息</text><text class="muted">{{item.wechat_id ? '微信可联系' : 'WhatsApp 可联系'}}</text></view>
+    </post-card>
+  </view>
+</view>

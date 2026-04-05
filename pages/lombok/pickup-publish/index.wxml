@@ -1,0 +1,18 @@
+﻿<t-navbar title="发布接机需求" leftArrow />
+
+<view class="page-container">
+  <view class="form-card" style="padding:28rpx;">
+    <view class="field-group"><t-input label="日期*" placeholder="例如 2026-04-09" value="{{form.date}}" data-field="date" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="时间" placeholder="例如 20:30" value="{{form.time}}" data-field="time" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="机场*" placeholder="例如 龙目岛国际机场" value="{{form.airport}}" data-field="airport" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="目的地*" placeholder="例如 Senggigi 海边酒店" value="{{form.destination}}" data-field="destination" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="乘客人数" type="number" placeholder="请输入人数" value="{{form.passenger_count}}" data-field="passenger_count" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="行李件数" type="number" placeholder="请输入行李件数" value="{{form.luggage_count}}" data-field="luggage_count" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="偏好车型" placeholder="例如 SUV / 7 座" value="{{form.preferred_car_type}}" data-field="preferred_car_type" bind:change="onFieldChange" /></view>
+    <view class="field-group"><checkbox-group bindchange="onShareRideChange"><label class="agreement-box"><checkbox value="share" checked="{{form.share_ride_flag}}" color="#0f8f53" />我接受拼车 / 拼单接机</label></checkbox-group></view>
+    <view class="field-group"><t-textarea label="备注" placeholder="例如 航班号、儿童座椅需求等" value="{{form.remark}}" data-field="remark" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="微信号" placeholder="至少填一个联系方式" value="{{form.wechat_id}}" data-field="wechat_id" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="WhatsApp" placeholder="至少填一个联系方式" value="{{form.whatsapp}}" data-field="whatsapp" bind:change="onFieldChange" /></view>
+    <t-button theme="primary" block bindtap="submit">提交发布</t-button>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+﻿<t-navbar title="我的发布" leftArrow />
+
+<view class="page-container">
+  <section-header title="我的航班行李发布" />
+  <view wx:for="{{flightPosts}}" wx:key="id" class="section-gap list-card" style="padding:24rpx;">
+    <view style="display:flex;align-items:center;justify-content:space-between;gap:12rpx;"><view><view class="field-label" style="margin-bottom:6rpx;">{{item.departure_city}} -> {{item.arrival_city}}</view><view class="mini-desc">{{item.departure_date}} · {{item.available_weight_kg}}kg</view></view><status-tag status="{{item.status}}" /></view>
+    <view class="btn-row" style="margin-top:20rpx;"><t-button size="small" theme="default" variant="outline" class="btn-item" bindtap="editTip">编辑</t-button><t-button size="small" theme="warning" variant="outline" class="btn-item" data-id="{{item.id}}" bindtap="toggleFlightStatus">停用 / 恢复</t-button></view>
+  </view>
+
+  <view class="section-gap"></view>
+  <section-header title="我的接机需求发布" />
+  <view wx:for="{{pickupDemands}}" wx:key="id" class="section-gap list-card" style="padding:24rpx;">
+    <view style="display:flex;align-items:center;justify-content:space-between;gap:12rpx;"><view><view class="field-label" style="margin-bottom:6rpx;">{{item.airport}} -> {{item.destination}}</view><view class="mini-desc">{{item.date}} {{item.time}}</view></view><status-tag status="{{item.status}}" /></view>
+    <view class="btn-row" style="margin-top:20rpx;"><t-button size="small" theme="default" variant="outline" class="btn-item" bindtap="editTip">编辑</t-button><t-button size="small" theme="warning" variant="outline" class="btn-item" data-id="{{item.id}}" bindtap="togglePickupStatus">停用 / 恢复</t-button></view>
+  </view>
+
+  <view class="section-gap"></view>
+  <section-header title="我的司机服务发布" />
+  <view wx:for="{{driverServices}}" wx:key="id" class="section-gap list-card" style="padding:24rpx;">
+    <view style="display:flex;align-items:center;justify-content:space-between;gap:12rpx;"><view><view class="field-label" style="margin-bottom:6rpx;">{{item.driver_name}} / {{item.car_model}}</view><view class="mini-desc">{{item.service_area}}</view></view><status-tag status="{{item.status}}" /></view>
+    <view class="btn-row" style="margin-top:20rpx;"><t-button size="small" theme="default" variant="outline" class="btn-item" bindtap="editTip">编辑</t-button><t-button size="small" theme="warning" variant="outline" class="btn-item" data-id="{{item.id}}" bindtap="toggleDriverStatus">停用 / 恢复</t-button></view>
+  </view>
+</view>

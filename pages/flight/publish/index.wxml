@@ -1,0 +1,25 @@
+﻿<t-navbar title="发布行李额度" leftArrow />
+
+<view class="page-container">
+  <view class="form-card" style="padding:28rpx;">
+    <section-header title="航班行李发布表单" subtitle="当前先写入本地 mock 数据，后续可直接接接口" />
+    <view class="field-group">
+      <view class="field-label">方向</view>
+      <view class="chip-row">
+        <view wx:for="{{directionOptions}}" wx:key="value" class="chip {{form.direction === item.value ? 'chip--active' : ''}}" data-value="{{item.value}}" bindtap="setDirection">{{item.label}}</view>
+      </view>
+    </view>
+    <view class="field-group"><t-input label="出发日期*" placeholder="例如 2026-04-12" value="{{form.departure_date}}" data-field="departure_date" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="出发城市*" placeholder="例如 广州" value="{{form.departure_city}}" data-field="departure_city" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="出发机场*" placeholder="例如 CAN 白云机场" value="{{form.departure_airport}}" data-field="departure_airport" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="到达城市*" placeholder="例如 龙目岛" value="{{form.arrival_city}}" data-field="arrival_city" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="到达机场*" placeholder="例如 LOP Lombok Airport" value="{{form.arrival_airport}}" data-field="arrival_airport" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="可用重量(kg)*" type="number" placeholder="请输入可用重量" value="{{form.available_weight_kg}}" data-field="available_weight_kg" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="体积说明" placeholder="例如 中小件优先" value="{{form.volume_note}}" data-field="volume_note" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="参考价格" placeholder="例如 65 元/kg" value="{{form.reference_price}}" data-field="reference_price" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-textarea label="备注" placeholder="补充可接商品、时效等" value="{{form.remark}}" data-field="remark" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="微信号*" placeholder="请输入微信号" value="{{form.wechat_id}}" data-field="wechat_id" bind:change="onFieldChange" /></view>
+    <view class="field-group"><checkbox-group bindchange="onAgreementChange"><label class="agreement-box"><checkbox value="agree" checked="{{form.agreement}}" color="#0f8f53" />我确认仅允许正规电商平台商品，严禁夹带私人用品。</label></checkbox-group></view>
+    <t-button theme="primary" block bindtap="submit">提交发布</t-button>
+  </view>
+</view>

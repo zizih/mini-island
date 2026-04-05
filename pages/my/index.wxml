@@ -1,0 +1,21 @@
+﻿<t-navbar title="我的" />
+
+<view class="page-container">
+  <view class="hero-card">
+    <view style="display:flex;align-items:center;gap:24rpx;">
+      <t-avatar size="88rpx" image="{{user.avatar}}"></t-avatar>
+      <view>
+        <view class="hero-title" style="font-size:36rpx;">{{user.nickname}}</view>
+        <view class="hero-desc" style="margin-top:8rpx;">{{user.city}} · {{user.intro}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="panel-card" style="overflow:hidden;">
+    <t-cell-group>
+      <t-cell title="我的发布" description="查看行李、接机、司机服务发布" arrow bindtap="goMyPosts" />
+      <t-cell title="我的联系" description="查看我联系的人和联系过我的人" arrow bindtap="goContacts" />
+      <t-cell title="平台规则" description="查看平台定位与发布限制" arrow bindtap="goRules" />
+    </t-cell-group>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+﻿<t-navbar title="联系 / 申请" leftArrow />
+
+<view class="page-container">
+  <view class="info-card" wx:if="{{post}}" style="padding:28rpx;margin-bottom:24rpx;">
+    <view class="hero-title" style="font-size:34rpx;">{{post.departure_city}} -> {{post.arrival_city}}</view>
+    <view class="hero-desc">{{post.departure_date}} · 发布微信：{{post.wechat_id}}</view>
+  </view>
+
+  <view class="form-card" style="padding:28rpx;">
+    <view class="field-group"><t-input label="申请重量(kg)*" type="number" placeholder="请输入你想申请的重量" value="{{form.requested_weight_kg}}" data-field="requested_weight_kg" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="电商平台" placeholder="例如 淘宝 / 京东 / Shopee" value="{{form.ecommerce_platform}}" data-field="ecommerce_platform" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="商品描述" placeholder="例如 2 箱母婴用品" value="{{form.product_desc}}" data-field="product_desc" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-textarea label="备注" placeholder="补充时效、包装要求等" value="{{form.remark}}" data-field="remark" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="申请人微信号*" placeholder="请输入你的微信号" value="{{form.requester_wechat_id}}" data-field="requester_wechat_id" bind:change="onFieldChange" /></view>
+    <view class="field-group"><checkbox-group bindchange="onAgreementChange"><label class="agreement-box"><checkbox value="agree" checked="{{form.agreement}}" color="#0f8f53" />我确认仅申请正规电商平台商品，不涉及私人物品夹带。</label></checkbox-group></view>
+    <t-button theme="primary" block bindtap="submit">提交申请</t-button>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+<view class="post-card" bindtap="handleTap">
+  <view class="post-card__header">
+    <view class="post-card__title-wrap">
+      <view class="post-card__title">{{title}}</view>
+      <view wx:if="{{subtitle}}" class="post-card__subtitle">{{subtitle}}</view>
+    </view>
+    <slot name="header-extra"></slot>
+  </view>
+  <view class="post-card__body">
+    <slot></slot>
+  </view>
+  <view wx:if="{{primaryText || secondaryText}}" class="post-card__footer">
+    <t-button wx:if="{{secondaryText}}" size="small" theme="default" variant="outline" catchtap="handleSecondaryTap">{{secondaryText}}</t-button>
+    <t-button wx:if="{{primaryText}}" size="small" theme="primary" catchtap="handlePrimaryTap">{{primaryText}}</t-button>
+  </view>
+</view>

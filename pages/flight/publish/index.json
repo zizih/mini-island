@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "section-header": "/components/section-header/index"
+  }
+}

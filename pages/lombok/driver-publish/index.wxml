@@ -1,0 +1,17 @@
+﻿<t-navbar title="发布司机服务" leftArrow />
+
+<view class="page-container">
+  <view class="form-card" style="padding:28rpx;">
+    <view class="field-group"><t-input label="司机姓名*" placeholder="请输入司机姓名" value="{{form.driver_name}}" data-field="driver_name" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="车型*" placeholder="例如 Avanza / Hiace" value="{{form.car_model}}" data-field="car_model" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="座位数" type="number" placeholder="例如 6" value="{{form.seat_count}}" data-field="seat_count" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="行李容量说明" placeholder="例如 3 个 24 寸箱" value="{{form.luggage_capacity_note}}" data-field="luggage_capacity_note" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="服务区域*" placeholder="例如 机场 / Kuta / Senggigi" value="{{form.service_area}}" data-field="service_area" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="参考价格" placeholder="例如 250k 印尼盾起" value="{{form.reference_price}}" data-field="reference_price" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="支持语言" placeholder="例如 中文 / 印尼语 / 英语" value="{{form.language_supported}}" data-field="language_supported" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-textarea label="备注" placeholder="补充服务时间、是否可拼车等" value="{{form.remark}}" data-field="remark" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="微信号" placeholder="至少填一个联系方式" value="{{form.wechat_id}}" data-field="wechat_id" bind:change="onFieldChange" /></view>
+    <view class="field-group"><t-input label="WhatsApp" placeholder="至少填一个联系方式" value="{{form.whatsapp}}" data-field="whatsapp" bind:change="onFieldChange" /></view>
+    <t-button theme="primary" block bindtap="submit">提交发布</t-button>
+  </view>
+</view>

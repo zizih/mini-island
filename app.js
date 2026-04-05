@@ -1,10 +1,12 @@
-import gulpError from './utils/gulpError';
+﻿const { initMockStorage, getCurrentUser } = require('./utils/store');
+
 App({
-    onShow() {
-        if (gulpError !== 'gulpErrorPlaceHolder') {
-            wx.redirectTo({
-                url: `/pages/gulp-error/index?gulpError=${gulpError}`,
-            });
-        }
-    },
+  globalData: {
+    currentUser: null,
+  },
+
+  onLaunch() {
+    initMockStorage();
+    this.globalData.currentUser = getCurrentUser();
+  },
 });

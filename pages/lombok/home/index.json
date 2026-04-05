@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "post-card": "/components/post-card/index",
+    "section-header": "/components/section-header/index"
+  }
+}

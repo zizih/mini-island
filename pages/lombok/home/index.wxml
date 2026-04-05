@@ -1,0 +1,12 @@
+﻿<t-navbar title="龙目岛本地服务" leftArrow />
+
+<view class="page-container">
+  <view class="hero-card">
+    <view class="hero-title">龙目岛机场接送与本地服务匹配</view>
+    <view class="hero-desc">可用于机场接机、拼车、包车、司机服务对接。平台只做流量入口和联系交换。</view>
+  </view>
+
+  <section-header title="服务入口" subtitle="快速进入需求列表和司机服务列表" />
+  <view class="section-gap"><post-card title="机场接机需求" subtitle="乘客发布接机、拼车、行李和车型偏好" primaryText="查看需求" bind:cardtap="goPickupList" bind:primarytap="goPickupList" /></view>
+  <view class="section-gap"><post-card title="司机服务列表" subtitle="查看司机、车型、服务区域、参考价格" primaryText="查看司机" bind:cardtap="goDriverList" bind:primarytap="goDriverList" /></view>
+</view>

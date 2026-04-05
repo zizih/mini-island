@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "section-header": "/components/section-header/index",
+    "status-tag": "/components/status-tag/index"
+  }
+}
