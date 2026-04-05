@@ -1,5 +1,5 @@
 {
-  "description": "mini-island project config",
+  "description": "mini-island clean business project",
   "packOptions": {
     "ignore": [],
     "include": []
@@ -53,7 +53,7 @@
     "miniprogram": {
       "list": [
         {
-          "name": "首页",
+          "name": "home",
           "pathName": "pages/home/index",
           "query": "",
           "scene": null
