@@ -1,35 +1,36 @@
-﻿<t-navbar title="海岛互联" />
+<t-navbar title="海岛互联" />
 
 <view class="page-container">
-  <view class="hero-card">
-    <view class="hero-title">中国 - 印度尼西亚出行与本地信息匹配</view>
-    <view class="hero-desc">先做信息发布、浏览、联系交换，不做平台支付。双方匹配后自行添加微信或 WhatsApp 私下沟通。</view>
-    <view class="hero-tips">
-      <view class="tip-pill">飞行行李互助</view>
-      <view class="tip-pill">龙目岛接送匹配</view>
-      <view class="tip-pill">绿色白色 MVP</view>
+  <view class="search-panel">
+    <section-header title="快速搜索" subtitle="只做信息发布、搜索、交流与匹配，不做支付、不做下单、不做履约。匹配后请通过微信或 WhatsApp 私下沟通，并自行核实信息。" />
+    <view class="quick-tag-row">
+      <view wx:for="{{quickTags}}" wx:key="*this" class="quick-tag {{activeTag === item ? 'quick-tag--active' : ''}}" data-tag="{{item}}" bindtap="toggleTag">{{item}}</view>
+    </view>
+    <view class="search-input-wrap">
+      <t-input label="关键词" placeholder="例如：接机、司机、龙目岛、广州、行李互助" value="{{keyword}}" clearable bind:change="onKeywordChange" />
     </view>
   </view>
 
-  <section-header title="核心入口" subtitle="两个主要业务模块，先把信息流跑通" />
-
-  <view class="section-gap">
-    <post-card title="中国 - 印尼航班行李互助" subtitle="发布航班计划与可用行李额度" primaryText="查看信息" bind:cardtap="goFlightList" bind:primarytap="goFlightList">
-      <view class="summary-line"><text>适用方向</text><text class="highlight">中国 -> 印尼 / 印尼 -> 中国</text></view>
-      <view class="summary-line"><text>平台定位</text><text class="muted">仅做信息匹配，不做交易结算</text></view>
-      <view class="summary-line"><text>重要规则</text><text class="highlight">仅限正规电商平台商品</text></view>
-    </post-card>
+  <view wx:if="{{filteredFeedList.length}}">
+    <view wx:for="{{filteredFeedList}}" wx:key="id" class="section-gap">
+      <view class="feed-card">
+        <view class="feed-head">
+          <view>
+            <view class="feed-title">{{item.title}}</view>
+            <view class="feed-meta">{{item.module}} · {{item.category}}</view>
+          </view>
+          <view class="feed-copy" data-label="{{item.contactLabel}}" data-value="{{item.contactValue}}" bindtap="copyContact">
+            <t-icon name="file-copy" size="34rpx" color="#0f8f53" />
+          </view>
+        </view>
+        <view class="feed-line">{{item.line1}}</view>
+        <view class="feed-line muted" wx:if="{{item.line2}}">{{item.line2}}</view>
+        <view class="feed-line muted" wx:if="{{item.remark}}">{{item.remark}}</view>
+        <view class="feed-contact">{{item.contactLabel}}：{{item.contactValue || '暂无'}}</view>
+      </view>
+    </view>
   </view>
-
-  <view class="section-gap">
-    <post-card title="龙目岛本地服务" subtitle="机场接机、拼车、包车、司机服务匹配" primaryText="进入服务" bind:cardtap="goLombokHome" bind:primarytap="goLombokHome">
-      <view class="summary-line"><text>适用场景</text><text class="highlight">接机需求 / 司机服务</text></view>
-      <view class="summary-line"><text>联系渠道</text><text class="muted">微信或 WhatsApp</text></view>
-      <view class="summary-line"><text>当前阶段</text><text class="highlight">Mock 数据演示</text></view>
-    </post-card>
-  </view>
-
-  <view class="section-gap btn-row">
-    <t-button theme="primary" class="btn-item" bindtap="goPublish">立即发布信息</t-button>
+  <view wx:else class="empty-wrap">
+    <t-empty description="没有找到匹配的信息"></t-empty>
   </view>
 </view>

@@ -1,8 +1,13 @@
-﻿<t-navbar title="航班行李互助" leftArrow />
+<t-navbar title="航班行李互助" leftArrow />
 
 <view class="page-container">
+  <view class="warn-box" style="margin-bottom:24rpx;">
+    <view class="warn-title">附加功能说明</view>
+    <view class="warn-text">这是平台的辅助信息功能，不是首页主功能。仅用于中国 - 印尼之间的航班行李信息交换，双方线下自行确认。</view>
+  </view>
+
   <view class="filter-card" style="padding:28rpx;">
-    <section-header title="筛选信息" subtitle="先用本地筛选，后续可直接替换成接口查询参数" />
+    <section-header title="筛选信息" subtitle="查找可联系的航班行李额度信息" />
     <view class="field-group">
       <view class="field-label">方向</view>
       <view class="chip-row">
@@ -14,7 +19,7 @@
     <view class="field-group" style="margin-bottom:0;"><t-input label="出发日期" placeholder="例如：2026-04-12" value="{{filters.departure_date}}" data-field="departure_date" bind:change="onInputChange" /></view>
   </view>
 
-  <view class="section-gap"><section-header title="航班信息列表" subtitle="点击卡片查看详情与申请入口" /></view>
+  <view class="section-gap"><section-header title="行李互助信息" subtitle="仅限正规电商商品，严禁私人物品夹带" /></view>
 
   <view wx:if="{{filteredPosts.length}}">
     <view wx:for="{{filteredPosts}}" wx:key="id" class="section-gap">
@@ -22,7 +27,7 @@
         <status-tag slot="header-extra" status="{{item.status}}" />
         <view class="summary-line"><text>可用重量</text><text class="highlight">{{item.available_weight_kg}} kg</text></view>
         <view class="summary-line"><text>体积说明</text><text class="muted">{{item.volume_note}}</text></view>
-        <view class="summary-line"><text>参考价格</text><text class="muted">{{item.reference_price}}</text></view>
+        <view class="summary-line"><text>沟通方式</text><text class="muted">匹配后微信私下联系</text></view>
       </post-card>
     </view>
   </view>

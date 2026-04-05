@@ -16,4 +16,16 @@ Page({
   goDriverPublish() {
     wx.navigateTo({ url: '/pages/lombok/driver-publish/index' });
   },
+
+  goPickupList() {
+    wx.navigateTo({ url: '/pages/lombok/pickup-list/index' });
+  },
+
+  goDriverList() {
+    wx.navigateTo({ url: '/pages/lombok/driver-list/index' });
+  },
+
+  goFlightList() {
+    wx.navigateTo({ url: '/pages/flight/list/index' });
+  },
 });

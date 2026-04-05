@@ -1,14 +1,10 @@
-﻿<t-navbar title="发布信息" />
+<t-navbar title="发布与入口" />
 
 <view class="page-container">
-  <view class="hero-card">
-    <view class="hero-title">选择你要发布的内容</view>
-    <view class="hero-desc">保持结构简单，先用本地 mock 数据模拟发布成功，方便你后续继续改造。</view>
-  </view>
+  <section-header title="核心本地信息" subtitle="龙目岛本地信息优先" />
 
-  <section-header title="发布入口" subtitle="按业务模块分别发布" />
+  <view class="section-gap"><post-card title="发布接机需求" subtitle="乘客发布机场接送、拼车、包车等实用信息" primaryText="去发布" secondaryText="查看列表" bind:cardtap="goPickupPublish" bind:primarytap="goPickupPublish" bind:secondarytap="goPickupList" /></view>
+  <view class="section-gap"><post-card title="发布司机服务" subtitle="司机或车队发布车型、服务区域、语言和联系方式" primaryText="去发布" secondaryText="查看列表" bind:cardtap="goDriverPublish" bind:primarytap="goDriverPublish" bind:secondarytap="goDriverList" /></view>
 
-  <view class="section-gap"><post-card title="发布航班行李额度" subtitle="适合发布中国 - 印尼之间的航班行李富余信息" primaryText="去发布" bind:cardtap="goFlightPublish" bind:primarytap="goFlightPublish" /></view>
-  <view class="section-gap"><post-card title="发布接机需求" subtitle="乘客发布机场接送、拼车、包车等需求" primaryText="去发布" bind:cardtap="goPickupPublish" bind:primarytap="goPickupPublish" /></view>
-  <view class="section-gap"><post-card title="发布司机服务" subtitle="司机或车队发布可服务时间、车型、区域" primaryText="去发布" bind:cardtap="goDriverPublish" bind:primarytap="goDriverPublish" /></view>
+  <view class="section-gap"><post-card title="发布航班行李互助" subtitle="中国 - 印尼航班行李额度信息发布与联系" primaryText="去发布" secondaryText="查看列表" bind:cardtap="goFlightList" bind:primarytap="goFlightPublish" bind:secondarytap="goFlightList" /></view>
 </view>

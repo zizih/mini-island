@@ -1,6 +1,8 @@
 {
   "usingComponents": {
-    "post-card": "/components/post-card/index",
-    "section-header": "/components/section-header/index"
+    "section-header": "/components/section-header/index",
+    "t-empty": "tdesign-miniprogram/empty/empty",
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-icon": "tdesign-miniprogram/icon/icon"
   }
 }
